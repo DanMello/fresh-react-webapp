@@ -5,29 +5,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
   mode: 'development',
-  entry: [
-    './src/index.development.js'
-  ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
   devServer: {
     contentBase: './dist',
-    port: 3000
+    port: 3000,
+    historyApiFallback: true
   },
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true }
-          }
-        ]
-      },
       {
         test: /\.css$/,
         use: [
@@ -43,11 +27,5 @@ module.exports = merge(common, {
         ] 
       }
     ]
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    })
-  ]
+  }
 });

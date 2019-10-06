@@ -3,6 +3,7 @@
 exports[`Renders correctly 1`] = `
 <div
   className="welcome"
+  id="test"
 >
   Welcome to your app.
 </div>
