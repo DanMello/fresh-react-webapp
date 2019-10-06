@@ -1,2 +1,2 @@
-# seperate-react-app
-A package allows me to create and test new features for my web app in isolation from the rest of code.
+# fresh-react-webapp
+A react starting point with all you need to get started with webapp
